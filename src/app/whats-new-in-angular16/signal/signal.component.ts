@@ -11,7 +11,9 @@ export class SignalComponent implements OnInit {
   lastName = "Mega"
 
   changeName(){
-    this.fistName = "guna"
+    this.fistName = "Guna"
+    console.log(this.fistName,this.lastName);
+    
   }
 
   constructor() { }
