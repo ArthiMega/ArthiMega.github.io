@@ -20,6 +20,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatListModule} from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
+import { ObservableComponent } from './RxJs/observable/observable.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MapComponent,
     DirectionRendererComponent,
     SignalComponent,
-    NavBarComponent
+    NavBarComponent,
+    ObservableComponent
    ],
   imports: [
     BrowserModule,
