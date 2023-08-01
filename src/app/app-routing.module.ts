@@ -4,16 +4,20 @@ import { MapComponent } from './map/map.component';
 import { SignalComponent } from './whats-new-in-angular16/signal/signal.component';
 import { DirectionRendererComponent } from './direction-renderer/direction-renderer.component';
 import { ObservableComponent } from './RxJs/observable/observable.component';
+import { TranslatorComponent } from './translator/translator.component';
 
 const routes: Routes = [
   {path:"map", component:MapComponent},
   {path:"signal", component:SignalComponent},
   {path:"direct", component: DirectionRendererComponent},
-  {path:"observable", component:ObservableComponent}
+  {path:"observable", component:ObservableComponent},
+  {path:"translate", component:TranslatorComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    initialNavigation: 'enabledBlocking'
+})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

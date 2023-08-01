@@ -1,0 +1,7 @@
+{
+    "welcomeMessage": "Welcome to our website!",
+    "nameLabel":"Name",
+    "placeholderName": "Enter your name",
+    "submitButtonText": "Submit",
+    "errorMessage": "An error occurred. Please try again later."
+}
