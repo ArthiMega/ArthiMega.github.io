@@ -20,11 +20,9 @@
   <mat-drawer mode="side" opened>
     <mat-nav-list>
     <h2 matListItemTitle>What is new in angular 16</h2>
-      <a mat-list-item routerLink="signal">Signal</a>
-      <a mat-list-item routerLink="map">Map</a>
-      <a mat-list-item routerLink="direct">Directions API</a>
-      <a mat-list-item routerLink="observable">Observable</a>
-      <a mat-list-item routerLink="translate">Translator</a>
+    <div *ngFor="let link of links">
+      <a mat-list-item routerLink="{{link.link}}">{{link.title}}</a>
+    </div>
     </mat-nav-list>
   </mat-drawer>
   <mat-drawer-content>

@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { NgrxStoreComponent } from './ngrx-store.component';
+import { TaskCollectionComponent } from './task-collection.component';
 
-describe('NgrxStoreComponent', () => {
-  let component: NgrxStoreComponent;
-  let fixture: ComponentFixture<NgrxStoreComponent>;
+describe('TaskCollectionComponent', () => {
+  let component: TaskCollectionComponent;
+  let fixture: ComponentFixture<TaskCollectionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgrxStoreComponent ]
+      declarations: [ TaskCollectionComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgrxStoreComponent);
+    fixture = TestBed.createComponent(TaskCollectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

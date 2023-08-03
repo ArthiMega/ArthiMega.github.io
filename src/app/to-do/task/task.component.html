@@ -1,0 +1,11 @@
+<h2>hi{{tasks}}</h2>
+<div
+  class="book-item"
+  *ngFor="let task of tasks"
+>
+  <p>{{task.taskDetails.task}}</p><span> by {{task.taskDetails.status}}</span>
+  <button
+    (click)="add.emit(task.taskId)"
+    data-test="add-button"
+  >Add to Collection</button>
+</div>
