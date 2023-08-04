@@ -6,3 +6,20 @@
 <!-- <app-task-collection class="task-collection" [tasks]="(taskCollection$ |async)!" (remove)="onRemove($event)"></app-task-collection> -->
 <!-- <app-book-collection class="book-collection" [books]="(bookCollection$ | async)!" (remove)="onRemove($event)"> -->
 <!-- </app-book-collection> -->
+
+<mat-form-field>
+    <mat-label>Task</mat-label>
+    <input matInput>
+</mat-form-field>
+<mat-form-field>
+    <mat-label>Status</mat-label>
+    <mat-select>
+        <mat-option>Completed</mat-option>
+        <mat-option>Pending</mat-option>
+    </mat-select>
+</mat-form-field>
+<mat-form-field>
+    <mat-label>Task Handlers</mat-label>
+</mat-form-field>
+
+  

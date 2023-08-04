@@ -11,7 +11,7 @@ import { TodoActions, TodoApiActions } from '../state/todo.actions';
 })
 export class NgRxComponent implements OnInit {
 
-  tasks$ = this.store.select(selectTasks)
+  tasks$ = this.store.select(selectTasks) 
   taskCollection$ = this.store.select(selectTaskCollection)
 
   onAdd(taskId: string){
