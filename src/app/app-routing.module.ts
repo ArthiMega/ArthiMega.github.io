@@ -6,6 +6,7 @@ import { DirectionRendererComponent } from './direction-renderer/direction-rende
 import { ObservableComponent } from './RxJs/observable/observable.component';
 import { TranslatorComponent } from './translator/translator.component';
 import { NgRxComponent } from './ng-rx/ng-rx.component';
+import { DynamicFormsComponent } from './dynamic-forms/dynamic-forms.component';
 
 const routes: Routes = [
   {path:"map", component:MapComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:"direct", component: DirectionRendererComponent},
   {path:"observable", component:ObservableComponent},
   {path:"translate", component:TranslatorComponent},
-  {path:'ngrx', component: NgRxComponent}
+  {path:'ngrx', component: NgRxComponent},
+  {path:"dynamic-form", component:DynamicFormsComponent}
 ];
 
 @NgModule({

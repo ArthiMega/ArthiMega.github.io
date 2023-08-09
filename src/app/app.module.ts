@@ -34,6 +34,9 @@ import { collectionReducer } from './state/collection.reducer';
 import { TaskCollectionComponent } from './task-collection/task-collection.component';
 import { NgRxComponent } from './ng-rx/ng-rx.component';
 import { TaskComponent } from './to-do/task/task.component';
+import { DynamicFormsComponent } from './dynamic-forms/dynamic-forms.component';
+import { MatTreeModule} from '@angular/material/tree';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -50,7 +53,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     TranslatorComponent,
     TaskCollectionComponent,
     NgRxComponent,
-    TaskComponent
+    TaskComponent,
+    DynamicFormsComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +75,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
+    MatTreeModule,
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     TranslateModule.forRoot({
       loader: {
@@ -79,7 +84,13 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    StoreModule.forRoot({ task: taskReducer, collection: collectionReducer })
+    StoreModule.forRoot({ task: taskReducer, collection: collectionReducer }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent]
