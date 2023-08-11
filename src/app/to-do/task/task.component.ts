@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ToDoModel } from '../to-do.model';
 import { Store } from '@ngrx/store';
-import { add, remove, reset } from 'src/app/state/todo.actions';
+import { add, decrement, increment, remove, reset, reset1 } from 'src/app/state/todo.actions';
+import { CounterState } from 'src/app/state/task.state';
 
 
 @Component({
@@ -38,7 +39,17 @@ export class TaskComponent implements OnInit {
   resetTask(){
     this.store.dispatch(reset())
   }
-  constructor( private store :Store<{task:{task:string}}>) { }
+
+  onIncrement(){
+    this.store.dispatch(increment())
+  }
+  ondecrement(){
+    this.store.dispatch(decrement())
+  }
+  onReset(){
+    this.store.dispatch(reset1())
+  }
+  constructor( private store :Store<{task:{task:string}, counter:CounterState}>) { }
 
   ngOnInit() {
   }

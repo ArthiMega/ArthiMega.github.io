@@ -22,15 +22,15 @@ export const TodoApiActions = createActionGroup({
 
 export class AddTask implements Action {
   readonly type = AddTaskConst;
-  constructor(public data : number){}
+  constructor(public data: number) { }
 }
 
 export class RemoveTask implements Action {
   readonly type = RemoveTaskConst;
-  constructor(public id : number){}
+  constructor(public id: number) { }
 }
 
-export type Actions = AddTask | RemoveTask 
+export type Actions = AddTask | RemoveTask
 
 //wertyuiop[poiuytrewqwertyghuop[hgfdsadfghjkl;lkjhgfdsasdfghjklkjhgfdsasdfghjkljhgasdfuiop-----------------------------------]]
 
@@ -39,3 +39,16 @@ import { createAction } from "@ngrx/store";
 export const add = createAction('add')
 export const remove = createAction('remove')
 export const reset = createAction('reset')
+
+export const increment = createAction('increment')
+export const decrement = createAction('decrement')
+export const reset1 = createAction('reset')
+
+export const costonIncrement = createAction(
+  'customincrement',
+   props<{count:number}>()
+);
+
+export const editeText = createAction(
+  'customedit'
+)

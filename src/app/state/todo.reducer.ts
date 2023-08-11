@@ -2,7 +2,8 @@ import { createReducer, on } from '@ngrx/store';
 import * as TaskAction  from './todo.actions'
 import { TodoApiActions } from './todo.actions';
 import { ToDoModel } from '../to-do/to-do.model';
-import { InitialState1 } from './task.state';
+import { InitialState1, initialCounterState } from './task.state';
+import { state } from '@angular/animations';
 
 export const initialState: ReadonlyArray<ToDoModel > = [];
 const InitialState : ToDoModel = {
@@ -37,3 +38,38 @@ export function TodoReducers(state:ToDoModel[] = [InitialState], action: TaskAct
       return state;
   }
 }
+
+export const counterReducer = createReducer(
+  initialCounterState,
+  on(TaskAction.increment, (state:any)=>{
+    return {
+      ...state,
+      counter:state.counter + 1
+    }
+  }),
+  on(TaskAction.decrement, (state:any)=>{
+    return{
+      ...state,
+      counter:state.counter - 1
+    }
+  }),
+  on(TaskAction.reset1, (state:any) =>{
+    return{
+      ...state,
+      counter: 0
+    }
+  }),
+  on(TaskAction.costonIncrement, (state, action)=>{
+    console.log(action);
+    return{
+      ...state,
+      counter:state.counter + action.count
+    }
+  }),
+  on(TaskAction.editeText, (state, action)=>{
+      return{
+        ...state,
+        lyrics:"Un appan visila kettavan"
+      }
+  })
+)
