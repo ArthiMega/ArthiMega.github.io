@@ -29,7 +29,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslatorComponent } from './translator/translator.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { taskReducer } from './state/todo.reducer';
+import { taskReducer, todoreducer } from './state/todo.reducer';
 import { collectionReducer } from './state/collection.reducer';
 import { TaskCollectionComponent } from './task-collection/task-collection.component';
 import { NgRxComponent } from './ng-rx/ng-rx.component';
@@ -84,7 +84,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    StoreModule.forRoot({ task: taskReducer, collection: collectionReducer }),
+    StoreModule.forRoot({ task: todoreducer, collection: collectionReducer }),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable

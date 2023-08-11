@@ -13,6 +13,19 @@ export class NgRxComponent implements OnInit {
 
   tasks$ = this.store.select(selectTasks) 
   taskCollection$ = this.store.select(selectTaskCollection)
+  taskList:string[]= [
+    "Eating"
+  ];
+
+  onAddTask(task:any){
+    this.taskList.push(task)
+  }
+  onRemoveTask(){
+    this.taskList.pop()
+  }
+  onResetTask(){
+    this.taskList = []
+  }
 
   onAdd(taskId: string){
     this.store.dispatch(TodoActions.addTask({taskId}))

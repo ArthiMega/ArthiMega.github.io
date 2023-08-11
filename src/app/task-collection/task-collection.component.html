@@ -1,10 +1,11 @@
-<div 
-  class="book-item"
-  *ngFor="let task of tasks"
->
-  <p>{{task}}</p><span> by {{task}}</span>
-  <button
-    (click)="remove.emit(task)"
-    data-test="remove-button"
-  >Remove from Collection</button>
+<h2>Task list</h2>
+<div *ngFor="let task of taskList">
+  <p><b>*</b> {{task}}</p>
 </div>
+
+
+<div *ngFor="let task of taskList1">
+  <p><b>:- </b> {{task}}</p>
+</div>
+
+ 

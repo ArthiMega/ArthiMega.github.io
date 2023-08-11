@@ -1,3 +1,4 @@
+
 import { Action } from '@ngrx/store';
 import { createActionGroup, props } from '@ngrx/store';
 import { ToDoModel } from '../to-do/to-do.model';
@@ -29,4 +30,12 @@ export class RemoveTask implements Action {
   constructor(public id : number){}
 }
 
-export type Actions = AddTask | RemoveTask
+export type Actions = AddTask | RemoveTask 
+
+//wertyuiop[poiuytrewqwertyghuop[hgfdsadfghjkl;lkjhgfdsasdfghjklkjhgfdsasdfghjkljhgasdfuiop-----------------------------------]]
+
+import { createAction } from "@ngrx/store";
+
+export const add = createAction('add')
+export const remove = createAction('remove')
+export const reset = createAction('reset')
