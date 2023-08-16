@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
+import {MatTableModule} from '@angular/material/table';
 import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
 import { GoogleMapsModule } from '@angular/google-maps';
@@ -37,13 +38,17 @@ import { TaskComponent } from './to-do/task/task.component';
 import { DynamicFormsComponent } from './dynamic-forms/dynamic-forms.component';
 import { MatTreeModule} from '@angular/material/tree';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from 'src/environments/environment';
+import { appReducer } from './state/app.state';
+import { ToDoListComponent } from './to-do-list/to-do-list.component';
+import { AddTaskComponent } from './add-task/add-task.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     MapComponent,
     DirectionRendererComponent,
@@ -54,8 +59,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     TaskCollectionComponent,
     NgRxComponent,
     TaskComponent,
-    DynamicFormsComponent
-  ],
+    DynamicFormsComponent,
+    ToDoListComponent,
+      AddTaskComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -76,7 +83,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     ReactiveFormsModule,
     FormsModule,
     MatTreeModule,
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    MatTableModule,
+    StoreModule.forRoot(appReducer),
+    StoreDevtoolsModule.instrument({ logOnly: environment.production}),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -84,7 +93,6 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    StoreModule.forRoot({ task: todoreducer, collection: collectionReducer, counter:counterReducer }),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable

@@ -5,6 +5,7 @@ import { CounterState } from '../state/task.state';
 import * as counterAction from '../state/todo.actions';
 import { getLyrics } from '../state/counter.selector';
 import { Observable } from 'rxjs';
+import { AppState } from '../state/app.state';
 
 
 
@@ -33,7 +34,7 @@ export class DynamicFormsComponent implements OnInit {
   }
   constructor(
     private formBuilder: FormBuilder,
-    private store: Store<{counter:CounterState}>
+    private store: Store<AppState>
   ) { }
 
   ngOnInit() {

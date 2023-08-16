@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { CounterState } from '../state/task.state';
 import { getCounte } from '../state/counter.selector';
+import { AppState } from '../state/app.state';
 
 @Component({
   selector: 'app-task-collection',
@@ -20,7 +21,7 @@ export class TaskCollectionComponent implements OnInit, OnDestroy {
   counter!: number
   counter$!: Observable<number>;
 
-  constructor(private store: Store<{ counter: CounterState, task: { task: string }, }>) { }
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
     this.counter$ = this.store.select(getCounte)
@@ -32,7 +33,7 @@ export class TaskCollectionComponent implements OnInit, OnDestroy {
       })
     console.log(this.counter$);
     this.store.select('task').subscribe(data => {
-      this.taskList1 = data.task
+      this.taskList1 = data.tasks
       console.log("In Tassk Subscription");
     })
 

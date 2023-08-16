@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {MatTreeNestedDataSource, MatTreeModule} from '@angular/material/tree';
-import {NestedTreeControl} from '@angular/cdk/tree';
+import { MatTreeNestedDataSource, MatTreeModule } from '@angular/material/tree';
+import { NestedTreeControl } from '@angular/cdk/tree';
 
 @Component({
   selector: 'app-nav-bar',
@@ -10,13 +10,14 @@ import {NestedTreeControl} from '@angular/cdk/tree';
 export class NavBarComponent implements OnInit {
 
   links = [
-    { link: "signal",title:"Signal"},
-    { link: "map",title:"Map"},
-    { link: "direct",title:"Direct"},
-    { link: "observable",title:"Observable"},
-    { link: "translate",title:"Translator"},
-    { link: "ngrx",title:"NgRx"},
-    { link: "dynamic-form", title:"Dynamic Forms"}
+    { link: "signal", title: "Signal" },
+    { link: "map", title: "Map" },
+    { link: "direct", title: "Direct" },
+    { link: "observable", title: "Observable" },
+    { link: "translate", title: "Translator" },
+    { link: "ngrx", title: "NgRx" },
+    { link: "dynamic-form", title: "Dynamic Forms" },
+    { link: "to-do", title: "Todo List" }
 
   ]
   constructor() { }
