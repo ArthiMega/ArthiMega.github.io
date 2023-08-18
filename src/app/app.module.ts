@@ -42,6 +42,7 @@ import { environment } from 'src/environments/environment';
 import { appReducer } from './state/app.state';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { AddTaskComponent } from './add-task/add-task.component';
+import {MatCardModule} from '@angular/material/card';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -61,7 +62,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     TaskComponent,
     DynamicFormsComponent,
     ToDoListComponent,
-      AddTaskComponent
+    AddTaskComponent
    ],
   imports: [
     BrowserModule,
@@ -84,6 +85,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormsModule,
     MatTreeModule,
     MatTableModule,
+    MatCardModule,
     StoreModule.forRoot(appReducer),
     StoreDevtoolsModule.instrument({ logOnly: environment.production}),
     TranslateModule.forRoot({

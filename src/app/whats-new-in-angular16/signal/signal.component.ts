@@ -15,7 +15,9 @@ export class SignalComponent implements OnInit {
   z = computed(()=>this.x() + this.y())
   
 
-
+  chocolatePrice = signal(300)
+  noOfChocolates = signal(0)
+  totalMoney = computed(()=> this.chocolatePrice() * this.noOfChocolates())
 
   changeName(){
     this.fistName = "Guna"
@@ -25,6 +27,15 @@ export class SignalComponent implements OnInit {
     console.log(this.z(), "after change"); 
   }
 
+  // values = '';
+
+  // onKey(event: any) { // without type info
+  //   this.values += event.target.value + ' | ';
+  // }
+
+  onset(event:any){
+    this.noOfChocolates.set(event.target.value)    
+  }
   constructor() { }
 
   ngOnInit() {
