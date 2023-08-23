@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { addTask } from '../new-ngrx/action/task.action';
+import { Task } from '../models/task.model';
+import { AppState } from '../state/app.state';
 
 @Component({
   selector: 'app-add-task',
@@ -17,7 +21,18 @@ export class AddTaskComponent implements OnInit {
 
 
   onSubmit() {
-    if(!this.taskDetailsForm.valid)
+    if(!this.taskDetailsForm.valid){
+      return;
+    }
+    if(this.taskDetailsForm.value.taskName && this.taskDetailsForm.value.taskOwner){
+      const task:Task = {
+        taskName: this.taskDetailsForm.value.taskName,
+        taskOwner:this.taskDetailsForm.value.taskOwner
+      }
+      console.log(this.taskDetailsForm);
+      
+    this.store.dispatch(addTask({task}))
+    }
     console.log(this.taskDetailsForm);
   }
   getNameErrorMessage() {
@@ -28,7 +43,8 @@ export class AddTaskComponent implements OnInit {
   }
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private store: Store<AppState>
   ) { }
 
   ngOnInit() {

@@ -43,13 +43,14 @@ import { appReducer } from './state/app.state';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { AddTaskComponent } from './add-task/add-task.component';
 import {MatCardModule} from '@angular/material/card';
+import { EditTaskComponent } from './edit-task/edit-task.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
-  declarations: [	
+  declarations: [		
     AppComponent,
     MapComponent,
     DirectionRendererComponent,
@@ -62,7 +63,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     TaskComponent,
     DynamicFormsComponent,
     ToDoListComponent,
-    AddTaskComponent
+    AddTaskComponent,
+      EditTaskComponent
    ],
   imports: [
     BrowserModule,

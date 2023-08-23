@@ -21,6 +21,7 @@ export interface TasksState {
 export const initialTaskState: TasksState = {
     tasks: [
         {
+            id:'1',
             taskName: "Codding",
             taskOwner: "Arthi"
         }

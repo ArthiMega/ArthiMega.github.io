@@ -1,5 +1,6 @@
+import { newTaskReducer } from "../new-ngrx/reducer/task.reducer";
 import { CounterState, TasksState } from "./task.state";
-import { counterReducer, taskReducer, taskReducer1 } from "./todo.reducer";
+import { counterReducer, taskReducer1 } from "./todo.reducer";
 
 export interface AppState{
     counter: CounterState,
@@ -8,5 +9,6 @@ export interface AppState{
 
 export const appReducer = {
     counter: counterReducer,
-    task:taskReducer1
+    task:taskReducer1,
+    newtask:newTaskReducer
 }

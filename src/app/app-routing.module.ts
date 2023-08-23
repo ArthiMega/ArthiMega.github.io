@@ -9,6 +9,7 @@ import { NgRxComponent } from './ng-rx/ng-rx.component';
 import { DynamicFormsComponent } from './dynamic-forms/dynamic-forms.component';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { AddTaskComponent } from './add-task/add-task.component';
+import { EditTaskComponent } from './edit-task/edit-task.component';
 
 const routes: Routes = [
   {path:"map", component:MapComponent},
@@ -18,7 +19,7 @@ const routes: Routes = [
   {path:"translate", component:TranslatorComponent},
   {path:'ngrx', component: NgRxComponent},
   {path:"dynamic-form", component:DynamicFormsComponent},
-  {path:"to-do", component:ToDoListComponent, children:[{path:'add-task', component: AddTaskComponent}]}
+  {path:"to-do", component:ToDoListComponent, children:[{path:'add-task', component: AddTaskComponent}, {path:'edit-task', component:EditTaskComponent}]}
 ];
 
 @NgModule({

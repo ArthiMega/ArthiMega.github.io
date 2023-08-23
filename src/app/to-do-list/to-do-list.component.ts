@@ -14,7 +14,7 @@ import { getTasks } from '../state/task.selector';
 export class ToDoListComponent implements OnInit {
   dataSource:any
   tasks$!: Observable<Task[]>
-  displayedColumns: string[]= ["taskName", "taskOwner"]
+  displayedColumns: string[]= ["id","taskName", "taskOwner", "actions"]
 
   constructor(
     private store: Store<AppState>
