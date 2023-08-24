@@ -1,0 +1,4 @@
+.matForm{
+    display: flex;
+    flex-direction: column;
+}

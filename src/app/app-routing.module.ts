@@ -19,7 +19,7 @@ const routes: Routes = [
   {path:"translate", component:TranslatorComponent},
   {path:'ngrx', component: NgRxComponent},
   {path:"dynamic-form", component:DynamicFormsComponent},
-  {path:"to-do", component:ToDoListComponent, children:[{path:'add-task', component: AddTaskComponent}, {path:'edit-task', component:EditTaskComponent}]}
+  {path:"to-do", component:ToDoListComponent, children:[{path:'add-task', component: AddTaskComponent}, {path:'edit-task/:id', component:EditTaskComponent}]}
 ];
 
 @NgModule({

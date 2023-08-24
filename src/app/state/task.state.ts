@@ -24,6 +24,11 @@ export const initialTaskState: TasksState = {
             id:'1',
             taskName: "Codding",
             taskOwner: "Arthi"
+        },
+        {
+            id:'2',
+            taskName:"Eating",
+            taskOwner:"Arthi"
         }
     ]
 }

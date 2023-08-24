@@ -17,7 +17,10 @@
     </ng-container>
     <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef> Actions</th>
-        <td mat-cell *matCellDef="let task1"><button mat-raised-button color="primary">Update</button></td>
+        <button mat-raised-button>Copmleted</button>
+        <td mat-cell *matCellDef="let task1"><button [routerLink]="['edit-task', task1.id]" mat-raised-button
+                color="primary">Update</button>&nbsp;<button mat-raised-button color="accent" (click)="onDelete(task1.id)"><mat-icon>done</mat-icon>
+                Completed</button></td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

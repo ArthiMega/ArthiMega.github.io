@@ -13,6 +13,6 @@
     <input type="text" matInput formControlName="taskOwner">
     <mat-error>{{getOwnerErrorMessage()}}</mat-error>
   </mat-form-field>
-  <button mat-raised-button color="primary"(click)="onSubmit()" [disabled]="!taskDetailsForm.valid">Add Task</button>
+  <button mat-raised-button color="primary"(click)="onSubmit()" [disabled]="!taskDetailsForm.valid">Add Task</button>&nbsp;
 </form>
 <p>{{taskDetailsForm.value|json}}</p>
