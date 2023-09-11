@@ -1,0 +1,12 @@
+<input type="file" (change)="onFileSelected($event)">
+<button mat-raised-button color="primary" (click)="uploadPhoto()">Upload</button>
+<!-- {{imageUrl}} -->
+<br>
+<!-- <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+<input hidden (change)="onFileSelected($event)" #fileInput type="file" id="file">&nbsp;
+
+<button mat-raised-button color="primary" (click)="uploadPhoto()">Upload</button>
+{{imageUrl|json}} -->
+<div *ngIf="imageUrl">
+  <img [src]='imageUrl.__zone_symbol__value' alt="">
+</div>

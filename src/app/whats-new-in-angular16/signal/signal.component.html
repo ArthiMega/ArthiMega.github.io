@@ -1,0 +1,25 @@
+<div class="all">
+    <h2>WithoutSignal</h2>
+    <h4>Hi {{fistName}} {{lastName}}</h4>
+    <button mat-raised-button color="primary" (click)="changeName()">Change name</button>
+</div>&nbsp;
+<mat-card class="card">
+    <mat-card-header>
+        <mat-card-title>Check out page</mat-card-title>
+        <mat-card-subtitle>using anular signal</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>&nbsp;
+        <p><b>Candyman</b></p>
+        <p>Rs:{{chocolatePrice()}}</p>
+        <mat-form-field>
+            <mat-label>Enter No. Cocolates</mat-label>
+            <input type="number" matInput (keyup)="onset($event)">
+        </mat-form-field>
+        <p><b>Total price: {{totalMoney()}} </b></p>&nbsp;
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary">Buy Now</button>
+    </mat-card-actions>
+</mat-card>
+<!-- <input (keyup)="onKey($event)">
+<p>{{values}}</p> -->

@@ -1,0 +1,14 @@
+<h2>Task list</h2>
+<div *ngFor="let task of taskList">
+  <p><b>*</b> {{task}}</p>
+</div>
+
+
+<div *ngFor="let task of taskList1">
+  <p><b>:- </b> {{task}}</p>
+</div>
+
+ <h2>Counter using NgRx</h2>
+ <h4>Counter is : {{counter$|async}}</h4>
+ <!-- <h4>Counter is : {{(counter$|async)?.counter}}</h4> -->
+ 

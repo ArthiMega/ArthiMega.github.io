@@ -1,0 +1,28 @@
+<form action="" class="form">
+  <!-- <table>
+    <tr>
+      <td>
+        <mat-form-field class="form-element">
+          <mat-label>Name</mat-label>
+          <input type="text" matInput>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field class="form-element">
+          <mat-label>Email Address</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <button mat-raised-button color="basic"> Add member</button>
+</form> -->
+<h2 style="color: rgb(241, 58, 204);">{{lyrics$|async}}</h2>
+<mat-form-field>
+  <mat-label>Enter a number</mat-label>
+  <input type="number" matInput [(ngModel)]="value" #num>
+</mat-form-field><br>
+<button mat-raised-button color="primary" (click)="onAdd(num.value)">Add to counter</button>&nbsp;
+<button mat-raised-button color="accent" (click)="onChangeLyrics()">Change lyrics</button>

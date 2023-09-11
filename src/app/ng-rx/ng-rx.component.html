@@ -1,0 +1,15 @@
+
+
+<h2>Adding removing task without NgRx</h2>
+<!-- <app-task-collection class="task-collection" [tasks]="(taskCollection$ |async)!" (remove)="onRemove($event)"></app-task-collection> -->
+<!-- <app-book-collection class="book-collection" [books]="(bookCollection$ | async)!" (remove)="onRemove($event)"> -->
+<!-- </app-book-collection> -->
+
+<app-task (add)="onAddTask($event)" (remove)="onRemoveTask()" (recet)="onResetTask()"></app-task>
+<app-task-collection [taskList]="taskList"></app-task-collection>
+
+<h2>Adding Removing task  with NgRx</h2>
+
+<app-task></app-task>
+<app-task-collection></app-task-collection>
+<app-dynamic-forms></app-dynamic-forms>
