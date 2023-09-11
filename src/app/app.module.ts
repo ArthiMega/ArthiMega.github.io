@@ -44,6 +44,14 @@ import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { AddTaskComponent } from './add-task/add-task.component';
 import {MatCardModule} from '@angular/material/card';
 import { EditTaskComponent } from './edit-task/edit-task.component';
+// import { AngularFireStorageModule} from "@angular/fire";
+import { AngularFireModule } from '@angular/fire/compat';
+// import {AngularFileStorageModule} from '@angular/fire/compat/firestore'
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import * as firebase from 'firebase/app';
+import { initializeApp } from "firebase/app";
+import { FirebaseImageUploadComponent } from './firebase-image-upload/firebase-image-upload.component';
+initializeApp(environment.firebaseConfig);
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -64,7 +72,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     DynamicFormsComponent,
     ToDoListComponent,
     AddTaskComponent,
-      EditTaskComponent
+      EditTaskComponent,
+      FirebaseImageUploadComponent
    ],
   imports: [
     BrowserModule,

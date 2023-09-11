@@ -3,7 +3,6 @@ import * as TaskAction  from './todo.actions'
 import { TodoApiActions } from './todo.actions';
 import { ToDoModel } from '../to-do/to-do.model';
 import { InitialState1, initialCounterState, initialTaskState } from './task.state';
-import { state } from '@angular/animations';
 
 export const initialState: ReadonlyArray<ToDoModel > = [];
 const InitialState : ToDoModel = {

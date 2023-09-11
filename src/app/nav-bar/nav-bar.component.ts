@@ -17,8 +17,8 @@ export class NavBarComponent implements OnInit {
     { link: "translate", title: "Translator" },
     { link: "ngrx", title: "NgRx" },
     { link: "dynamic-form", title: "Dynamic Forms" },
-    { link: "to-do", title: "Todo List" }
-
+    { link: "to-do", title: "Todo List" },
+    { link: "firebase-image", title: "Firebase Image Upload"}
   ]
   constructor() { }
 
