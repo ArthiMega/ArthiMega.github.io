@@ -1,0 +1,18 @@
+<p>
+  add-task works!
+</p>
+<h1>Add Task</h1>
+<form [formGroup]="taskDetailsForm" class="matForm">
+  <mat-form-field>
+    <mat-label>Enter task name</mat-label>
+    <input type="text" matInput formControlName="taskName">
+    <mat-error>{{getNameErrorMessage()}}</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Enter Task Owner Name</mat-label>
+    <input type="text" matInput formControlName="taskOwner">
+    <mat-error>{{getOwnerErrorMessage()}}</mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="primary"(click)="onSubmit()" [disabled]="!taskDetailsForm.valid">Add Task</button>&nbsp;
+</form>
+<p>{{taskDetailsForm.value|json}}</p>

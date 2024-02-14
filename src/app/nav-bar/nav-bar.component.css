@@ -1,0 +1,28 @@
+.example-spacer {
+  flex: 0 0 400px;
+  }
+  mat-sidenav{
+    display: flex;
+    height: 100%;
+    /* width: 100%; */
+  }
+  mat-drawer-container{
+    height: 100%;
+    border-right: 1px solid rgba(0,0,0,.12);
+    width: 70%;
+    border: none;
+  }
+
+  .output{
+    /* position: absolute;  */
+    margin-top: 50px;
+    /* top: 50%; */
+    left: 5%;
+    /* margin-right: 5%; */
+    /* transform: translate(-50%, -50%); */
+    /* display:flex; */
+    justify-content: center;
+  /* align-items: center; */
+  /* height: 100%; */
+  /* width: 100%; */
+}

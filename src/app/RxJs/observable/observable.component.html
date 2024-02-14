@@ -1,0 +1,12 @@
+<h1 *ngIf="ajaxValue">{{ajaxValue.title|titlecase}}</h1>
+<mat-list *ngFor="let element of items">
+  <mat-list-item>
+    {{element}}
+  </mat-list-item>
+</mat-list>
+<ul id="output"></ul>
+<button  *ngIf="!ajaxValue" mat-raised-button color="basic" (click)="ajax()">Subscribe</button>
+<div *ngIf="ajaxValue">
+  <p><b>Id : </b>{{ajaxValue.id}}</p>
+  <p>{{ajaxValue.body}}</p>
+</div>

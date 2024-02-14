@@ -1,0 +1,7 @@
+{
+    "welcomeMessage": "Bienvenue sur notre site web !",
+    "nameLabel":"Nom",
+    "placeholderName": "Entrez votre nom",
+    "submitButtonText": "Soumettre",
+    "errorMessage": "Une erreur est survenue. Veuillez réessayer ultérieurement."
+}

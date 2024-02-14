@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 2</button>
+  </mat-menu>
+  <span>My App</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <mat-nav-list>
+    <h2 matListItemTitle>What is new in angular 16</h2>
+    <div *ngFor="let link of links">
+      <a mat-list-item routerLink="{{link.link}}">{{link.title}}</a>
+    </div>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content class="output">
+    <router-outlet class="content"></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

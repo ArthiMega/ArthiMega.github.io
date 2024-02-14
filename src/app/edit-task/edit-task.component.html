@@ -1,0 +1,14 @@
+<h2>Edit Task</h2>
+<form [formGroup]="taskDetailsForm" class="matForm">
+  <mat-form-field>
+    <mat-label>Enter task name</mat-label>
+    <input type="text" matInput formControlName="taskName">
+    <!-- <mat-error>{{getNameErrorMessage()}}</mat-error> -->
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Enter Task Owner Name</mat-label>
+    <input type="text" matInput formControlName="taskOwner">
+    <!-- <mat-error>{{getOwnerErrorMessage()}}</mat-error> -->
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="onUpdate()">Update Task</button>
+</form>

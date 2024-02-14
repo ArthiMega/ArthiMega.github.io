@@ -1,0 +1,9 @@
+<div>
+  <button type="button" (click)="dec()" title="smaller">-</button>
+  <button type="button" (click)="inc()" title="bigger">+</button>
+  <span [style.font-size.px]="size">FontSize: {{size}}px</span>
+  <br>
+  <label for="power">Power</label>
+  <input type="number" name="power" id="power" [(ngModel)] = "power">
+  <p>Our 2 power 10 is calculated using custom pipe {{power | powerCalculation:10}}</p>
+</div>
