@@ -11,6 +11,7 @@ import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
 import { FirebaseImageUploadComponent } from './firebase-image-upload/firebase-image-upload.component';
+import { TemplateSyntaxComponent } from './Revision/templatesyntax/template-syntax/template-syntax.component';
 
 const routes: Routes = [
   {path:"map", component:MapComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:'ngrx', component: NgRxComponent},
   {path:"dynamic-form", component:DynamicFormsComponent},
   {path:"to-do", component:ToDoListComponent, children:[{path:'add-task', component: AddTaskComponent}, {path:'edit-task/:id', component:EditTaskComponent}]},
-  {path:'firebase-image', component:FirebaseImageUploadComponent}
+  {path:'firebase-image', component:FirebaseImageUploadComponent},
+  {path:"template-syntax", component:TemplateSyntaxComponent},
 ];
 
 @NgModule({

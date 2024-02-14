@@ -8,5 +8,8 @@
 <button mat-raised-button color="primary" (click)="uploadPhoto()">Upload</button>
 {{imageUrl|json}} -->
 <div *ngIf="imageUrl">
-  <img [src]='imageUrl.__zone_symbol__value' alt="">
+  <img [src]='imageUrl.__zone_symbol__value' alt="" id="fireimage">
+</div>
+<div *ngFor="let image of imageList">
+  <img src={{image}} alt="" id="fireimage">
 </div>

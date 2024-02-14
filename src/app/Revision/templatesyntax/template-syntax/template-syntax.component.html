@@ -1,0 +1,17 @@
+<app-two-way-data-binding [(size)]="fontSizePx"></app-two-way-data-binding>
+<div [style.font-size.px]="fontSizePx" [appHighlight]="color">Resizable Text highlited by directive</div>
+
+<!-- <input type="radio" name="green" id="green" value="green" [(ngModel)] = "color">
+<label for="green">green</label>
+<input type="radio" name="red" id="red" value="red" [(ngModel)] = "color">
+<label for="red">red</label>
+<input type="radio" name="blue" id="blue" value="blue" [(ngModel)] = "color">
+<label for="blue">blue</label> -->
+<mat-radio-group aria-label="Select an option" [(ngModel)] = "color">
+    <mat-radio-button value="green">Green</mat-radio-button>
+    <mat-radio-button value="red">Red</mat-radio-button>
+    <mat-radio-button value="blue">Blue</mat-radio-button>
+</mat-radio-group>
+
+<p [appHighlight]="'pink'">Hi Nanna </p>
+<ng-template> dho paraa varala</ng-template>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage'; 
+import { getDownloadURL, getStorage, ref, uploadBytes, listAll,  } from 'firebase/storage';
 
 @Component({
   selector: 'app-firebase-image-upload',
@@ -8,19 +8,41 @@ import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage';
 })
 export class FirebaseImageUploadComponent implements OnInit {
   selectedFile: File | null = null;
-  imageUrl:any
-
+  imageUrl: any;
+  imageListRef = ref(getStorage(), 'images/')
+  imageList:string[]=[];
   constructor() {
     console.log("constructor");
-   }
+  }
 
   ngOnInit() {
-    console.log("ng on init");
+    this.listFilesInImagesFolder()
+    console.log(this.imageList);
     
+  }
+  listFilesInImagesFolder(){
+    listAll(this.imageListRef)
+    .then((res)=>{
+      res.items.forEach((itemRef)=>{
+        getDownloadURL(itemRef)
+        .then((url)=>{
+          this.imageList.push(url)
+        }).catch((error)=>{
+          console.log(error);
+          
+        })
+      })
+    }).catch((error)=>{
+      console.log("error listing files");
+      
+    })
   }
 
   onFileSelected(event: any) {
     this.selectedFile = event.target.files[0] as File;
+  }
+  getimages(){
+    
   }
 
   uploadPhoto() {
@@ -32,7 +54,7 @@ export class FirebaseImageUploadComponent implements OnInit {
     const storage = getStorage();
     const storageRef = ref(storage, 'images');
     const photoRef = ref(storageRef, this.selectedFile.name);
-    
+
     uploadBytes(photoRef, this.selectedFile)
       .then(() => {
         console.log('Image uploaded successfully');

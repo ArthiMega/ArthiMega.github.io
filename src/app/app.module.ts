@@ -51,6 +51,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import * as firebase from 'firebase/app';
 import { initializeApp } from "firebase/app";
 import { FirebaseImageUploadComponent } from './firebase-image-upload/firebase-image-upload.component';
+import { TemplateSyntaxComponent } from './Revision/templatesyntax/template-syntax/template-syntax.component';
 initializeApp(environment.firebaseConfig);
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -58,7 +59,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [		
+  declarations: [			
     AppComponent,
     MapComponent,
     DirectionRendererComponent,
@@ -73,7 +74,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ToDoListComponent,
     AddTaskComponent,
       EditTaskComponent,
-      FirebaseImageUploadComponent
+      FirebaseImageUploadComponent,
    ],
   imports: [
     BrowserModule,
